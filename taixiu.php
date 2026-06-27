@@ -1,5 +1,4 @@
 <?php
-hKOXJNK
 session_start(); // Bật Session để nhớ tên Khách
 
 // ==========================================
