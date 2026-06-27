@@ -1,4 +1,5 @@
 <?php
+asdasdasdasdasda địt con mẹ chúng mày ngu như con chó cũng mày sẽ phải ytara giá
 session_start(); // Bật Session để nhớ tên Khách
 
 // ==========================================
