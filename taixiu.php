@@ -1,5 +1,5 @@
 <?php
-dasda địt con mẹ chúng mày ngu như con chó cũng mày sẽ phải
+dasda địt con mẹ chúng mày ngu như con chó cũng mày sẽ phải cái lồn má
 session_start(); // Bật Session để nhớ tên Khách
 
 // ==========================================
