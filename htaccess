@@ -1,0 +1,29 @@
+# 1. Bật engine viết lại URL (BẮT BUỘC PHẢI CÓ)
+RewriteEngine On
+
+# 2. Tự động ép web chuyển sang HTTPS (Có ổ khóa bảo mật)
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# 3. Chặn người lạ xem danh sách các file trong thư mục
+Options -Indexes
+
+# 4. Kích hoạt trang lỗi 404 Custom của Hako
+ErrorDocument 404 /404.html
+
+# ==========================================
+# 5. XÓA ĐUÔI .PHP TRÊN URL
+# ==========================================
+# Tránh áp dụng cho thư mục
+RewriteCond %{REQUEST_FILENAME} !-d
+# Kiểm tra xem file .php có tồn tại không
+RewriteCond %{REQUEST_FILENAME}\.php -f
+# Trỏ ngầm URL sạch vào file .php
+RewriteRule ^(.*)$ $1.php [NC,L]
+
+# ==========================================
+# 6. XÓA ĐUÔI .HTML TRÊN URL
+# ==========================================
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [NC,L]
